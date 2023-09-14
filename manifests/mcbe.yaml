@@ -33,7 +33,7 @@ spec:
         - containerPort: 19132
         volumeMounts:
         - name: data
-          mountPath: "/app"
+          mountPath: "/app/worlds"
       volumes:
       - name: data
         persistentVolumeClaim:
