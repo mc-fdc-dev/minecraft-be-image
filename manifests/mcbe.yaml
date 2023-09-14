@@ -34,6 +34,13 @@ spec:
         volumeDevices:
         - name: data
           devicePath: /app/worlds
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "1"
+          limits:
+            memory: "4Gi"
+            cpu: "2"
       volumes:
       - name: data
         persistentVolumeClaim:
