@@ -30,7 +30,7 @@ spec:
         image: tuna2134/mcbe
         ports:
         - containerPort: 19132
-        volumeDevices:
+        volumeMounts:
         - name: data
           devicePath: "/app"
       volumes:
