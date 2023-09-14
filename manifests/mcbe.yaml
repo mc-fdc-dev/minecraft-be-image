@@ -33,14 +33,7 @@ spec:
         - containerPort: 19132
         volumeDevices:
         - name: data
-          devicePath: /app/worlds
-        resources:
-          requests:
-            memory: "1Gi"
-            cpu: "1"
-          limits:
-            memory: "4Gi"
-            cpu: "2"
+          devicePath: /app/world
       volumes:
       - name: data
         persistentVolumeClaim:
