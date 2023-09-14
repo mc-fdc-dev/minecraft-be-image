@@ -3,5 +3,5 @@ This is for Minecraft be docker image.
 
 ## Run image
 ```sh
-docker run tuna2134/mc-be
+docker run ghcr.io/mc-fdc-dev/minecraft-be-image:latest
 ```
