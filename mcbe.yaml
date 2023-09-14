@@ -33,7 +33,7 @@ spec:
         - containerPort: 19132
         volumeDevices:
         - name: data
-          devicePath: /app
+          devicePath: /app/worlds
       volumes:
       - name: data
         persistentVolumeClaim:
