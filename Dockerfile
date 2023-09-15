@@ -15,7 +15,10 @@ FROM ubuntu:22.04
 
 WORKDIR /app
 
-RUN apt-get update && apt-get install -y curl
+RUN apt-get update && \
+  apt-get install -y curl && \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/*
 COPY --from=get-mcbe /mcbe/source .
 
 ENV LD_LIBRARY_PATH=/app
