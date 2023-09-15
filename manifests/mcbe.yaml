@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
       - name: mcbe
-        image: tuna2134/mcbe
+        image: ghcr.io/mc-fdc-dev/minecraft-be-image
         ports:
         - containerPort: 19132
         volumeMounts:
