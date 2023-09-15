@@ -50,4 +50,8 @@ spec:
     port: 19132
     targetPort: 19132
     name: mc
+  - protocol: TCP
+    port: 19132
+    targetPort: 19132
+    name: mc-tcp
   type: LoadBalancer
