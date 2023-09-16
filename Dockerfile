@@ -22,4 +22,4 @@ RUN apt-get update && \
 COPY --from=get-mcbe /mcbe/source .
 
 ENV LD_LIBRARY_PATH=/app
-CMD ["./bedrock_server"]
+CMD ["/app/bedrock_server"]
