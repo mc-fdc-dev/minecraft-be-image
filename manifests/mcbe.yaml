@@ -33,10 +33,19 @@ spec:
         volumeMounts:
         - name: data
           mountPath: "/app/worlds"
+        - name: config-perms
+          mountPath: "/app/permissions.json"
+          subPath: "permissions.json"
       volumes:
       - name: data
         persistentVolumeClaim:
           claimName: mcbe-pvc
+      - name: config-perms
+        configMap:
+          name: mcbe-config
+          items:
+          - key: "permissions.json"
+            path: "permissons.json"
 ---
 apiVersion: v1
 kind: Service
@@ -55,3 +64,16 @@ spec:
     targetPort: 19132
     name: mc-tcp
   type: LoadBalancer
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mcbe-config
+data:
+  permissions.json: |
+    [
+      {
+        "permission": "operator",
+        "xuid": "2535449888211118"
+      }
+    ]
