@@ -35,8 +35,6 @@ spec:
           mountPath: "/app/worlds"
         - name: config-perms
           mountPath: "/app/permissions.json"
-          subPath: "permissions.json"
-          readOnly: false
       volumes:
       - name: data
         persistentVolumeClaim:
