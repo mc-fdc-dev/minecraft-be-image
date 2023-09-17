@@ -34,7 +34,7 @@ spec:
         - name: data
           mountPath: "/app/worlds"
         - name: config-perms
-          mountPath: "/app"
+          mountPath: "/app/permissions.json"
           subPath: "permissions.json"
       volumes:
       - name: data
