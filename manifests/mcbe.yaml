@@ -35,7 +35,6 @@ spec:
           mountPath: "/app/worlds"
         - name: config-perms
           mountPath: "/app/config"
-          subPath: "permissio.json"
       volumes:
       - name: data
         persistentVolumeClaim:
@@ -43,9 +42,6 @@ spec:
       - name: config-perms
         configMap:
           name: mcbe-config
-          items:
-          - key: permissions.json
-            path: permissio.json
 ---
 apiVersion: v1
 kind: Service
