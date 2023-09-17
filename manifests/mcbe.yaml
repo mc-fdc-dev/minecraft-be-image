@@ -36,7 +36,6 @@ spec:
         - name: config-perms
           mountPath: "/app"
           subPath: "permissions.json"
-          readOnly: true
       volumes:
       - name: data
         persistentVolumeClaim:
