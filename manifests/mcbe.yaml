@@ -42,9 +42,6 @@ spec:
       - name: config-perms
         configMap:
           name: mcbe-config
-          items:
-          - key: "permissions.json"
-            path: "permissions.json"
 ---
 apiVersion: v1
 kind: Service
