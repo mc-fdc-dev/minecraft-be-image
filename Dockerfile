@@ -1,4 +1,4 @@
-FROM python:3-slim as get-mcbe
+FROM python:3-slim AS get-mcbe
 
 WORKDIR /mcbe
 
