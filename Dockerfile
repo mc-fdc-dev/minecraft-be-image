@@ -26,4 +26,4 @@ COPY --chown=mcbe:mcbe --from=get-mcbe /mcbe/source .
 
 USER mcbe
 ENV LD_LIBRARY_PATH=/app
-CMD ["sh", "run.sh"]
+CMD ["/app/bedrock_server"]
