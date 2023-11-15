@@ -11,15 +11,20 @@ RUN python3 get-mcbe.py
 WORKDIR /mcbe/source
 RUN unzip /mcbe/bedrock-server.zip
 
-FROM ubuntu:22.04
+FROM debian:12-slim
 
 WORKDIR /app
 
 RUN apt-get update && \
-  apt-get install -y curl && \
+  apt-get install -y curl screen && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*
-COPY --from=get-mcbe /mcbe/source .
 
+RUN useradd -m mcbe && \
+  chown -R mcbe:mcbe /app
+COPY --chown=mcbe:mcbe --from=get-mcbe /mcbe/source .
+COPY run.sh .
+
+USER mcbe
 ENV LD_LIBRARY_PATH=/app
-CMD ["/app/bedrock_server"]
+CMD ["sh", "run.sh"]
