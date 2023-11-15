@@ -20,10 +20,7 @@ RUN apt-get update && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*
 
-RUN useradd -m mcbe && \
-  chown -R mcbe:mcbe /app
-COPY --chown=mcbe:mcbe --from=get-mcbe /mcbe/source .
+COPY --from=get-mcbe /mcbe/source .
 
-USER mcbe
 ENV LD_LIBRARY_PATH=/app
 CMD ["/app/bedrock_server"]
