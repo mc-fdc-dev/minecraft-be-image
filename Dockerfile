@@ -16,14 +16,13 @@ FROM debian:12-slim
 WORKDIR /app
 
 RUN apt-get update && \
-  apt-get install -y curl screen && \
+  apt-get install -y curl && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*
 
 RUN useradd -m mcbe && \
   chown -R mcbe:mcbe /app
 COPY --chown=mcbe:mcbe --from=get-mcbe /mcbe/source .
-COPY run.sh .
 
 USER mcbe
 ENV LD_LIBRARY_PATH=/app
