@@ -1,5 +1,6 @@
 # minecraft-be-image
 This is for Minecraft be docker image.
+It easy to use it
 
 ## Run image
 ```sh
