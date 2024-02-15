@@ -38,6 +38,11 @@ spec:
         - name: config-perms
           mountPath: "/app/permissions.json"
           subPath: "permissions.json"
+        resources:
+          requests:
+            memory: 0.5Gi
+          limits:
+            memory: 3Gi
       volumes:
       - name: data
         persistentVolumeClaim:
