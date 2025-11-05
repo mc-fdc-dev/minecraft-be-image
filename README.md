@@ -10,3 +10,5 @@ docker run ghcr.io/mc-fdc-dev/minecraft-be-image:latest
 or use docker compose
 
 or use kubernetes
+
+enjoy to play it!
