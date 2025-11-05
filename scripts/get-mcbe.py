@@ -10,7 +10,7 @@ soup = BeautifulSoup(r.text, "html.parser")
 
 # found patern link this https://minecraft.azureedge.net/bin-linux/bedrock-server-*.zip
 # get link
-link = soup.find("a", href=lambda href: href and href.startswith("href="https://www.minecraft.net/bedrockdedicatedserver/bin-linux/bedrock-server-"))
+link = soup.find("a", href=lambda href: href and href.startswith("https://www.minecraft.net/bedrockdedicatedserver/bin-linux/bedrock-server-"))
 print(link.get("href"))
 
 # install zip file
